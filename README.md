@@ -39,3 +39,25 @@ git push
   * WiFi scan arriving home detection
   * Runelite idle notification
   * Phone notification (or other pc stuff)
+
+# Tutorials
+
+* [learn python](https://www.learnpython.org/)
+  * Basics
+      * Classes and Objects
+      * Dictionaries
+      * Modules and Packages
+  * Advanced Tutorials
+      * Code Introspection
+      * Multiple Function Arguments
+      * Exception Handling
+      * List Comprehensions
+      * Lambda functions
+      * Generators
+      * Decorators
+      * Sets
+      * Serialization
+  * Data Science Tutorials
+      * Numpy Arrays
+      * Pandas Basics
+
