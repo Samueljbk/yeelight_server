@@ -12,10 +12,23 @@ git commit
 git push
 ``` 
 
+Or you can make a branch
+
+```sh
+git checkout -b feature/feature-description
+git push --upstream origin feature/feature-description
+# make some changes
+git add .
+git commit -m "implemented feature XYZ"
+git push
+```
+
+This will prompt you to make a "Pull Request" in stdout, click on it, make PR.
+
 # Todos
 
 * Git basics
-  * Solo dev workflows (add, commit, push)
+  * ~~Solo dev workflows (add, commit, push)~~
   * Team workflows (branch, add, commit, push, merge request, review)
 * Python basics
   * Syntax
@@ -28,7 +41,7 @@ git push
 * Deployment
   * Rasperry Pi via ssh+tmux
   * Docker (this is a bit advanced)
-    * Kubernetes (this is in the cloud)
+    * Kubernetes (even more advanced)
   * Mess with Jurgen's lights
 * Start leveraging those tools
   * HTTP API for controlling lights
