@@ -57,9 +57,18 @@ This will prompt you to make a "Pull Request" in stdout, click on it, make PR.
 
 * [learn python](https://www.learnpython.org/)
   * Basics
-      * Classes and Objects
-      * Dictionaries
-      * Modules and Packages
+      * ~~Hello, World!~~
+      * ~~Variables and Types~~
+      * ~~Lists~~
+      * ~~Basic Operators~~
+      * ~~String Formatting~~
+      * ~~Basic String Operations~~
+      * ~~Conditions~~
+      * ~~Loops~~
+      * ~~Functions~~
+      * ~~Classes and Objects~~
+      * ~~Dictionaries~~
+      * ~~Modules and Packages~~
   * Advanced Tutorials
       * Code Introspection
       * Multiple Function Arguments
