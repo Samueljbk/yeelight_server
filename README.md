@@ -15,7 +15,7 @@ git push
 # Todos
 
 * Git basics
-  * Solo dev workflows (add, commit, push)
+  * ~~Solo dev workflows (add, commit, push)~~
   * Team workflows (branch, add, commit, push, merge request, review)
 * Python basics
   * Syntax
