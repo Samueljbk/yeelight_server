@@ -28,7 +28,7 @@ git push
 * Deployment
   * Rasperry Pi via ssh+tmux
   * Docker (this is a bit advanced)
-    * Kubernetes (this is in the cloud)
+    * Kubernetes (even more advanced)
   * Mess with Jurgen's lights
 * Start leveraging those tools
   * HTTP API for controlling lights
