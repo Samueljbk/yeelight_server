@@ -12,6 +12,19 @@ git commit
 git push
 ``` 
 
+Or you can make a branch
+
+```sh
+git checkout -b feature/feature-description
+git push --upstream origin feature/feature-description
+# make some changes
+git add .
+git commit -m "implemented feature XYZ"
+git push
+```
+
+This will prompt you to make a "Pull Request" in stdout, click on it, make PR.
+
 # Todos
 
 * Git basics
