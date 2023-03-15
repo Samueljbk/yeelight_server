@@ -71,14 +71,18 @@ This will prompt you to make a "Pull Request" in stdout, click on it, make PR.
       * ~~Modules and Packages~~
   * Advanced Tutorials
       * ~~Code Introspection~~
-      * Multiple Function Arguments
-      * Exception Handling
+      * Generators
       * List Comprehensions
       * Lambda functions
-      * Generators
-      * Decorators
+      * Multiple Function Arguments
+      * Regular Expressions
+      * Exception Handling
       * Sets
       * Serialization
+      * Partial Functions
+      * Closures
+      * Decorators
+      * Map, Filter, Reduce
   * Data Science Tutorials
       * Numpy Arrays
       * Pandas Basics
