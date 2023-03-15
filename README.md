@@ -70,7 +70,7 @@ This will prompt you to make a "Pull Request" in stdout, click on it, make PR.
       * ~~Dictionaries~~
       * ~~Modules and Packages~~
   * Advanced Tutorials
-      * Code Introspection
+      * ~~Code Introspection~~
       * Multiple Function Arguments
       * Exception Handling
       * List Comprehensions
