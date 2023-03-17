@@ -36,6 +36,10 @@ This will prompt you to make a "Pull Request" in stdout, click on it, make PR.
     * Project structure
     * Linting, formatting, testing (maybe CI)
   * Environment setup (venv, pip, poetry)
+* General Learning
+  * HTTP APIs
+    * General learning of the networking (OSI model)
+    * Try make a few silly APIs
 * Basic tooling for controlling yeelight led strip
   * python package with nice functions
 * Start leveraging those tools
