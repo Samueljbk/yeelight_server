@@ -71,7 +71,7 @@ This will prompt you to make a "Pull Request" in stdout, click on it, make PR.
       * ~~Modules and Packages~~
   * Advanced Tutorials
       * ~~Code Introspection~~
-      * Generators
+      * ~~Generators~~
       * List Comprehensions
       * Lambda functions
       * Multiple Function Arguments
