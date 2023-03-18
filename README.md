@@ -39,6 +39,7 @@ This will prompt you to make a "Pull Request" in stdout, click on it, make PR.
 * General Learning
   * HTTP APIs
     * General learning of the networking (OSI model)
+    * [FastAPI](https://fastapi.tiangolo.com/#example)
     * Try make a few silly APIs
 * Basic tooling for controlling yeelight led strip
   * python package with nice functions
