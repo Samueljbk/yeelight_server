@@ -35,7 +35,7 @@ def status():
 
 @app.post("/api/v1/turn_on")
 def turn_on():
-    # TODO
-    print("turn bulb on here?")
+    # TODO turn bulb on here
+    return "Hello from the server! implement this function"
 
 # todo other things like turn_off, set_colour, etc.
