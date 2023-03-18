@@ -21,6 +21,7 @@ def index():
         url="/static/index.html",
     )
 
+
 # serve the frontend's static assets
 @app.get("/static/{path:path}")
 def static(path: str):
@@ -35,9 +36,11 @@ def status():
         bulb_name="TODO",
     )
 
+
 @app.post("/api/v1/turn_on")
 def turn_on():
     # TODO turn bulb on here
     return "Hello from the server! implement this function"
+
 
 # todo other things like turn_off, set_colour, etc.
