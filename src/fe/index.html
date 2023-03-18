@@ -6,17 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- load in script /static/index.js -->
   <script src="/static/index.js"></script>
-  <!-- load in css /static/index.css -->
-  <link rel="stylesheet" href="/static/index.css">
   <!-- load in bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- load in css /static/index.css -->
+  <link rel="stylesheet" href="/static/index.css">
   <title>Document</title>
 </head>
 <body>
   <h1>Demo yeelight server</h1>
-  <p>Click the button to turn on the light</p>
+  <p>Click the button to turn on the light or get server status</p>
   <button onclick="turnOn()">Turn on</button>
   <!-- response span to show the response from the server -->
-  <span id="response"></span>
+  <span id="turn-on-response"></span>
+  <br>
+  <!-- get server status -->
+  <button onclick="getStatus()">Get server status</button>
+  <!-- response span to show the response from the server -->
+  <span id="status-response"></span>
 </body>
 </html>

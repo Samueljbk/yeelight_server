@@ -24,7 +24,9 @@ def index():
 # serve the frontend's static assets
 @app.get("/static/{path:path}")
 def static(path: str):
-    return FileResponse(_fe_dir / path)
+    return fa.responses.FileResponse(
+        path=_fe_dir / path,
+    )
 
 
 @app.get("/api/v1/status")
