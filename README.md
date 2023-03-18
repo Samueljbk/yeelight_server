@@ -105,6 +105,8 @@ Go to [localhost:8000/](localhost:8000/)!
     * Sam
     * Jerome
     * Jerome has additional yeelight strip for misc other user
+* Books
+  * Pragmatic Programmer
 
 # Tutorials
 
