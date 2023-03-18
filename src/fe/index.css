@@ -1,0 +1,11 @@
+/* add some padding to the body */
+body {
+  padding: 20px;
+}
+
+/* style for buttons, big, blue text, round edges */
+button {
+  color: blue;
+  font-size: 20px;
+  border-radius: 10px;
+}

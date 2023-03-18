@@ -25,6 +25,32 @@ git push
 
 This will prompt you to make a "Pull Request" in stdout, click on it, make PR.
 
+# Demo app
+
+## Setup
+
+Make and activate a venv
+
+```sh
+python -m venv venv
+. venv/bin/activate
+# . venv/Scripts/activate # for windows
+```
+
+Install deps
+
+```sh
+pip install -r requirements.txt
+```
+
+Run the app
+
+```sh
+uvicorn --reload src.be.app:app --port 8000
+```
+
+Go to [localhost:8000/](localhost:8000/)!
+
 # Todos
 
 * Git basics
@@ -39,6 +65,7 @@ This will prompt you to make a "Pull Request" in stdout, click on it, make PR.
 * General Learning
   * HTTP APIs
     * General learning of the networking (OSI model)
+    * [FastAPI](https://fastapi.tiangolo.com/#example)
     * Try make a few silly APIs
 * Basic tooling for controlling yeelight led strip
   * python package with nice functions
