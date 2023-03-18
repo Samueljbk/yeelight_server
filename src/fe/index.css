@@ -1,0 +1,12 @@
+/* style for h1, big font, green */
+h1 {
+  font-size: 2em;
+  color: green;
+}
+
+/* style for buttons, blue, rounded edges, big */
+button {
+  color: blue;
+  border-radius: 10px;
+  font-size: 1.5em;
+}
