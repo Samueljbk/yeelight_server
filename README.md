@@ -125,18 +125,18 @@ Go to [localhost:8000/](localhost:8000/)!
   * Advanced Tutorials
       * ~~Code Introspection~~
       * ~~Generators~~
-      * List Comprehensions
-      * Lambda functions
-      * Multiple Function Arguments
-      * Regular Expressions
-      * Exception Handling
-      * Sets
-      * Serialization
-      * Partial Functions
-      * Closures
-      * Decorators
-      * Map, Filter, Reduce
+      * ~~List Comprehensions~~
+      * ~~Lambda functions~~
+      * ~~Multiple Function Arguments~~
+      * ~~Exception Handling~~
+      * ~~Sets~~
+      * ~~Serialization~~
+      * ~~Partial Functions~~
+      * ~~Closures~~
+      * ~~Decorators~~
+      * ~~Map, Filter, Reduce~~
+      * Regular Expressions - Semi done but difficulty understanding
   * Data Science Tutorials
-      * Numpy Arrays
-      * Pandas Basics
+      * ~~Numpy Arrays~~
+      * ~~Pandas Basics~~
 
