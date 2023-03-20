@@ -1,9 +1,9 @@
 1. Install the `yeelight` library for Python:
-   - Task: Run `pip install yeelight` in the terminal to install the required library to control the Yeelight LED strip.
+   - ~~Task: Run `pip install yeelight` in the terminal to install the required library to control the Yeelight LED strip.~~
 
 2. Import the library and discover the bulb:
-   - Task: Import the `yeelight` library by adding `from yeelight import Bulb` at the beginning of the server code.
-   - Task: Write a function named `discover_bulb` that uses the `yeelight` library to discover the Yeelight LED strip. You can follow the documentation: [https://yeelight.readthedocs.io/en/latest/](https://yeelight.readthedocs.io/en/latest/)
+   - ~~Task: Import the `yeelight` library by adding `from yeelight import Bulb` at the beginning of the server code.~~
+   - ~~Task: Write a function named `discover_bulb` that uses the `yeelight` library to discover the Yeelight LED strip. You can follow the documentation~~: [https://yeelight.readthedocs.io/en/latest/](https://yeelight.readthedocs.io/en/latest/)
 
 3. Store the discovered bulb as a global variable:
    - Task: Create a global variable named `bulb` and assign the discovered bulb instance to it. Make sure to call the `discover_bulb` function to initialize the `bulb` variable.
