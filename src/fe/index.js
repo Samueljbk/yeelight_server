@@ -29,8 +29,9 @@ function getStatus() {
     );
     // set the response span text to the response text content
     // don't forget to get the result of the promise
-    response.text().then(function(text) {
-      responseSpan.textContent = text;
+    response.json().then(function(obj) {
+      responseSpan.textContent = obj.colour;
+
     })
 
   })

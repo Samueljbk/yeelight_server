@@ -6,7 +6,7 @@
    - ~~Task: Write a function named `discover_bulb` that uses the `yeelight` library to discover the Yeelight LED strip. You can follow the documentation~~: [https://yeelight.readthedocs.io/en/latest/](https://yeelight.readthedocs.io/en/latest/)
 
 3. Store the discovered bulb as a global variable:
-   - Task: Create a global variable named `bulb` and assign the discovered bulb instance to it. Make sure to call the `discover_bulb` function to initialize the `bulb` variable.
+   - ~~Task: Create a global variable named `bulb` and assign the discovered bulb instance to it. Make sure to call the `discover_bulb` function to initialize the `bulb` variable.~~
 
 4. Implement the `status()` function:
    - Task: Use the `bulb` variable to get the properties of the LED strip, such as its name, power status, brightness, and color. Return these properties as an instance of the `Status` class.
