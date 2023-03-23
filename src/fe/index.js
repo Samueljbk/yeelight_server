@@ -67,7 +67,7 @@ function setColour() {
 
   // post the /api/vi/set_colour endpoint
   fetch('/api/v1/set_colour', {
-    method: 'POST'
+    method: 'POST',
     body: JSON.stringify(colour)
   }).then(function(response) {
     // get the response span
@@ -90,7 +90,7 @@ function setBrightness() {
 
   // post the /api/vi/set_brightness endpoint
   fetch('/api/v1/set_brightness', {
-    method: 'POST'
+    method: 'POST',
     body: JSON.stringify(brightness)
   }).then(function(response) {
     // get the response span
