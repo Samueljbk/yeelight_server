@@ -17,7 +17,6 @@ class Status(BaseModel):
     # ... other useful things regarding service status?
     # colour? brightness? etc..
 
-
 # statically serve the frontend
 @app.get("/")
 def index():
@@ -61,14 +60,13 @@ def turn_off():
     bulb.turn_off()
     return bulb.turn_off()
 
-
-
 def discover_bulb():
     bulbs = discover_bulbs()
-    print(bulbs)
-    bulb_ip = bulbs[0]['ip']
-    bulb = Bulb(bulb_ip)
-    return bulb
+    for bulb in bulbs:
+        if bulb['capabilities']['name'] == 'Sam':
+            bulb_ip = bulb['ip']
+            bulb = Bulb(bulb_ip)
+            return bulb
 
 def _int_to_colour(colour: int) -> Tuple[int, int, int]:
     return (
