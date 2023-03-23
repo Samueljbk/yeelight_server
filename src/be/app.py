@@ -34,6 +34,7 @@ def static(path: str):
         path=_fe_dir / path,
     )
 
+# I don't know why this needs to be here but it breaks without it :)
 @app.get("/turn_on")
 def hello():
     bulb.turn_on()
@@ -42,13 +43,15 @@ def hello():
 @app.get("/api/v1/status")
 def status():
     #Use the `bulb` variable to get the properties of the LED strip, such as its name, power status, brightness, and color. Return these properties as an instance of the `Status` class.
-    # bulb_name = bulb.get_properties()['name']
-    # power_status = bulb.get_properties()['power']
-    # brightness = bulb.get_properties()['bright']
-    # colour = bulb.get_properties()['rgb']
-    # print(f"Bulb name: {bulb_name}, Power status: {power_status}, Brightness: {brightness}, Colour: {colour}")
+    bulb_name_variable = bulb.get_properties()['name']
+    power_status = bulb.get_properties()['power']
+    brightness = bulb.get_properties()['bright']
+    colour = bulb.get_properties()['rgb']
+    if bulb_name_variable is None:
+        bulb_name_variable = 'Unknown'
+    print(f"Bulb name: {bulb_name_variable}, Power status: {power_status}, Brightness: {brightness}, Colour: {colour}")
     return Status(
-        bulb_name='test',
+        bulb_name= bulb_name_variable,
         power_status='on',
         brightness=0,
         colour=(0xFF, 0xFF, 0xFF)
@@ -74,7 +77,4 @@ def discover_bulb():
 
 bulb = discover_bulb()
 print(bulb)
-
-bulb.turn_off()
-test = status()
 # todo other things like turn_off, set_colour, etc.
