@@ -29,24 +29,18 @@ def index():
 # serve the frontend's static assets
 @app.get("/static/{path:path}")
 def static(path: str):
-    print(f"static path: {path}")
     return fa.responses.FileResponse(
         path=_fe_dir / path,
     )
 
-# I don't know why this needs to be here but it breaks without it :)
-@app.get("/turn_on")
-def hello():
-    bulb.turn_on()
-    return "Hello from the server!"
-
 @app.get("/api/v1/status")
 def status():
     #Use the `bulb` variable to get the properties of the LED strip, such as its name, power status, brightness, and color. Return these properties as an instance of the `Status` class.
-    bulb_name_variable = bulb.get_properties()['name']
-    power_status = bulb.get_properties()['power']
-    brightness = bulb.get_properties()['bright']
-    colour = bulb.get_properties()['rgb']
+    properties = bulb.get_properties()
+    bulb_name_variable = properties['name'] or "Unknown"
+    power_status = properties['power']
+    brightness = properties['bright']
+    colour = properties['rgb']
     if bulb_name_variable is None:
         bulb_name_variable = 'Unknown'
     print(f"Bulb name: {bulb_name_variable}, Power status: {power_status}, Brightness: {brightness}, Colour: {colour}")
@@ -60,21 +54,32 @@ def status():
 @app.post("/api/v1/turn_on")
 def turn_on():
     bulb.turn_on() 
-    return "Turned on light"
+    return bulb.turn_on()
 
 @app.post("/api/v1/turn_off")
 def turn_off():
     bulb.turn_off()
-    return "Turned off light"
+    return bulb.turn_off()
 
-bulb = None
+
 
 def discover_bulb():
     bulbs = discover_bulbs()
+    print(bulbs)
     bulb_ip = bulbs[0]['ip']
     bulb = Bulb(bulb_ip)
     return bulb
 
+def _int_to_colour(colour: int) -> Tuple[int, int, int]:
+    return (
+        (colour >> 16) & 0xFF,
+        (colour >> 8) & 0xFF,
+        colour & 0xFF,
+    )
+
+bulb = None
 bulb = discover_bulb()
 print(bulb)
 # todo other things like turn_off, set_colour, etc.
+
+
