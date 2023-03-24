@@ -36,18 +36,16 @@ def static(path: str):
 def status():
     #Use the `bulb` variable to get the properties of the LED strip, such as its name, power status, brightness, and color. Return these properties as an instance of the `Status` class.
     properties = bulb.get_properties()
-    bulb_name_variable = properties['name'] or "Unknown"
+    bulb_name = properties['name'] or "Unknown"
     power_status = properties['power']
     brightness = properties['bright']
-    colour = properties['rgb']
-    if bulb_name_variable is None:
-        bulb_name_variable = 'Unknown'
-    print(f"Bulb name: {bulb_name_variable}, Power status: {power_status}, Brightness: {brightness}, Colour: {colour}")
+    colour = _int_to_colour(properties['rgb'])
+    print(f"Bulb name: {bulb_name}, Power status: {power_status}, Brightness: {brightness}, Colour: {colour}")
     return Status(
-        bulb_name= bulb_name_variable,
-        power_status='on',
-        brightness=0,
-        colour=(0xFF, 0xFF, 0xFF)
+        bulb_name = bulb_name,
+        power_status = power_status,
+        brightness = brightness,
+        colour = colour
     )
 
 @app.post("/api/v1/turn_on")
@@ -67,6 +65,7 @@ def discover_bulb():
             bulb_ip = bulb['ip']
             bulb = Bulb(bulb_ip)
             return bulb
+    raise Exception ("No bulb found")
 
 def _int_to_colour(colour: int) -> Tuple[int, int, int]:
     return (
@@ -77,7 +76,6 @@ def _int_to_colour(colour: int) -> Tuple[int, int, int]:
 
 bulb = None
 bulb = discover_bulb()
-print(bulb)
 # todo other things like turn_off, set_colour, etc.
 
 
