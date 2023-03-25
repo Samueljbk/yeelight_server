@@ -1,17 +1,21 @@
 from pathlib import Path
 import fastapi as fa
 from pydantic import BaseModel
+from yeelight import Bulb, discover_bulbs
+from typing import Tuple
+
 
 app = fa.FastAPI()
 
 _fe_dir = Path(__file__).parent.parent / "fe"
 
-
 class Status(BaseModel):
     bulb_name: str
+    power_status: str
+    brightness: int
+    colour: Tuple[int, int, int]
     # ... other useful things regarding service status?
     # colour? brightness? etc..
-
 
 # statically serve the frontend
 @app.get("/")
@@ -28,16 +32,48 @@ def static(path: str):
         path=_fe_dir / path,
     )
 
-
 @app.get("/api/v1/status")
 def status():
+    #Use the `bulb` variable to get the properties of the LED strip, such as its name, power status, brightness, and color. Return these properties as an instance of the `Status` class.
+    properties = bulb.get_properties()
+    bulb_name = properties['name'] or "Unknown"
+    power_status = properties['power']
+    brightness = properties['bright']
+    colour = _int_to_colour(properties['rgb'])
+    print(f"Bulb name: {bulb_name}, Power status: {power_status}, Brightness: {brightness}, Colour: {colour}")
     return Status(
-        bulb_name="TODO",
+        bulb_name = bulb_name,
+        power_status = power_status,
+        brightness = brightness,
+        colour = colour
     )
 
 @app.post("/api/v1/turn_on")
 def turn_on():
-    # TODO turn bulb on here
-    return "Hello from the server! implement this function"
+    return bulb.turn_on()
 
+@app.post("/api/v1/turn_off")
+def turn_off():
+    return bulb.turn_off()
+
+def discover_bulb():
+    bulbs = discover_bulbs()
+    for bulb in bulbs:
+        if bulb['capabilities']['name'] == 'Sam':
+            bulb_ip = bulb['ip']
+            bulb = Bulb(bulb_ip)
+            return bulb
+    raise Exception ("No bulb found")
+
+def _int_to_colour(colour: int) -> Tuple[int, int, int]:
+    return (
+        (colour >> 16) & 0xFF,
+        (colour >> 8) & 0xFF,
+        colour & 0xFF,
+    )
+
+bulb = None
+bulb = discover_bulb()
 # todo other things like turn_off, set_colour, etc.
+
+

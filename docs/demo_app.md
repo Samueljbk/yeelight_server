@@ -48,14 +48,14 @@ Here is a basic design overview diagram:
 ## Next steps
 
 1. Install the `yeelight` library for Python:
-   - Task: Run `pip install yeelight` in the terminal to install the required library to control the Yeelight LED strip.
+   - ~~Task: Run `pip install yeelight` in the terminal to install the required library to control the Yeelight LED strip.~~
 
 2. Import the library and discover the bulb:
-   - Task: Import the `yeelight` library by adding `from yeelight import Bulb` at the beginning of the server code.
-   - Task: Write a function named `discover_bulb` that uses the `yeelight` library to discover the Yeelight LED strip. You can follow the documentation: [https://yeelight.readthedocs.io/en/latest/](https://yeelight.readthedocs.io/en/latest/)
+   - ~~Task: Import the `yeelight` library by adding `from yeelight import Bulb` at the beginning of the server code.~~
+   - ~~Task: Write a function named `discover_bulb` that uses the `yeelight` library to discover the Yeelight LED strip. You can follow the documentation~~: [https://yeelight.readthedocs.io/en/latest/](https://yeelight.readthedocs.io/en/latest/)
 
 3. Store the discovered bulb as a global variable:
-   - Task: Create a global variable named `bulb` and assign the discovered bulb instance to it. Make sure to call the `discover_bulb` function to initialize the `bulb` variable.
+   - ~~Task: Create a global variable named `bulb` and assign the discovered bulb instance to it. Make sure to call the `discover_bulb` function to initialize the `bulb` variable.~~
 
 4. Implement the `status()` function:
    - Task: Use the `bulb` variable to get the properties of the LED strip, such as its name, power status, brightness, and color. Return these properties as an instance of the `Status` class.
