@@ -55,3 +55,22 @@ function turnOff() {
 
   })
 }
+
+// Change light colour function
+function setColour() {
+  // post the /api/vi/turn_on endpoint
+  fetch('/api/v1/set_colour', {
+    method: 'POST'
+  }).then(function(response) {
+    // get the response span
+    var responseSpan = document.getElementById(
+      'change-colour-response'
+    );
+    // set the response span text to the response text content
+    // don't forget to get the result of the promise
+    response.text().then(function(text) {
+      responseSpan.textContent = text;
+    })
+
+  })
+}

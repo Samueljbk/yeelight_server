@@ -16,6 +16,7 @@ class Status(BaseModel):
     colour: Tuple[int, int, int]
     # ... other useful things regarding service status?
     # colour? brightness? etc..
+    
 
 # statically serve the frontend
 @app.get("/")
