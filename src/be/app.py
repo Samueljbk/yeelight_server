@@ -54,7 +54,6 @@ def turn_on():
 
 @app.post("/api/v1/turn_off")
 def turn_off():
-    bulb.turn_off()
     return bulb.turn_off()
 
 def discover_bulb():
