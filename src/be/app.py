@@ -51,12 +51,10 @@ def status():
 
 @app.post("/api/v1/turn_on")
 def turn_on():
-    bulb.turn_on() 
     return bulb.turn_on()
 
 @app.post("/api/v1/turn_off")
 def turn_off():
-    bulb.turn_off()
     return bulb.turn_off()
 
 def discover_bulb():
