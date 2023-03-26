@@ -13,7 +13,6 @@ function turnOn() {
     response.text().then(function(text) {
       responseSpan.textContent = text;
     })
-
   })
 }
 
@@ -29,11 +28,9 @@ function getStatus() {
     );
     // set the response span text to the response text content
     // don't forget to get the result of the promise
-    response.json().then(function(obj) {
+    response.text().then(function(obj) {
       responseSpan.textContent = obj;
-
     })
-
   })
 }
 
@@ -52,7 +49,6 @@ function turnOff() {
     response.text().then(function(text) {
       responseSpan.textContent = text;
     })
-
   })
 }
 
@@ -79,7 +75,6 @@ function setColour() {
     response.text().then(function(text) {
       responseSpan.textContent = text;
     })
-
   })
 }
 
@@ -102,6 +97,5 @@ function setBrightness() {
     response.text().then(function(text) {
       responseSpan.textContent = text;
     })
-
   })
 }

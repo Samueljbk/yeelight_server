@@ -5,7 +5,7 @@ body {
 
 /* style for buttons, big, blue text, round edges */
 button {
-  color: blue;
+  color: rgb(137, 85, 219);
   font-size: 20px;
   border-radius: 10px;
 }

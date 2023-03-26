@@ -39,14 +39,14 @@ def status():
     properties = bulb.get_properties()
     bulb_name = properties['name'] or "Unknown"
     power_status = properties['power']
-    brightness = properties['bright']
-    colour = _int_to_colour(properties['rgb'])
+    brightness = int(properties['bright'])
+    colour = _int_to_colour(int(properties['rgb']))
     print(f"Bulb name: {bulb_name}, Power status: {power_status}, Brightness: {brightness}, Colour: {colour}")
     return Status(
         bulb_name = bulb_name,
         power_status = power_status,
         brightness = brightness,
-        colour = colour
+        colour = colour,
     )
 
 @app.post("/api/v1/turn_on")
@@ -67,6 +67,7 @@ def discover_bulb():
     raise Exception ("No bulb found")
 
 def _int_to_colour(colour: int) -> Tuple[int, int, int]:
+    colour = int(colour)
     return (
         (colour >> 16) & 0xFF,
         (colour >> 8) & 0xFF,
@@ -77,4 +78,6 @@ bulb = None
 bulb = discover_bulb()
 # todo other things like turn_off, set_colour, etc.
 
-
+if __name__ == '__main__':
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
