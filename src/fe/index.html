@@ -23,6 +23,20 @@
   <!-- response span to show the response from the server -->
   <span id="turn-off-response"></span>
   <br>
+  <button onclick="setColour()">Set colour</button>
+  <!-- Three input values for RGB, 0-255 -->
+  <input type="number" id="red" min="0" max="255" value="255">
+  <input type="number" id="green" min="0" max="255" value="255">
+  <input type="number" id="blue" min="0" max="255" value="255">
+  <!-- response span to show the response from the server -->
+  <span id="set-colour-response"></span>
+  <br>
+  <button onclick="setBrightness()">Set brightness</button>
+  <!-- One input value for brightness, 0-100 -->
+  <input type="number" id="brightness" min="0" max="100" value="100">
+  <!-- response span to show the response from the server -->
+  <span id="set-brightness-response"></span>
+  <br>
   <!-- get server status -->
   <button onclick="getStatus()">Get server status</button>
   <!-- response span to show the response from the server -->

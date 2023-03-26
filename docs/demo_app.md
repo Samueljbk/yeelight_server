@@ -1,3 +1,52 @@
+# Yeelight Web App
+
+## Description
+
+This web app contains two components:
+* An HTTP API backend written in python using FastAPI
+* A frontend written in plain JS/HTML/CSS
+
+The goal is to allow a user (person on the local network) to access the frontend and be able to control a yeelight LED strip (which is also on the network).
+
+The frontend should have buttons allowing the user to:
+* Turn on the yeelight
+* Turn off the yeelight
+* Get the status of the yeelight (brightness, colour, power state)
+* Set the colour of the yeelight
+* Set the brightness of the yeelight
+
+The backend should implement API endpoints to accomodate the above buttons with endpoints like:
+
+* GET `/api/v1/status`
+  * Returns a `Status` object in JSON
+    * like `{"colour": [255, 0, 0], "brightness": 100, "power_state": true}`
+* POST `/api/v1/turn_on`
+  * No body
+  * Turns the yeelight on
+  * Returns confirmation string
+* POST `/api/v1/turn_off`
+  * No body
+  * Turn the bulb off
+  * Returns confirmation string
+* POST `/api/v1/set_colour`
+  * Body is a list of rgb values (ints, 0-255)
+    * like `[255, 0, 0]`
+  * Sets the colour of the bulb to the colour described in the body
+  * Returns confirmation string    
+* POST `/api/v1/set_brightness`
+  * warning: scope creep - this was not in the original spec/discussions
+  * Body of the request is an integer (0-100) representing brightness levels
+  * Sets the brightness of the bulb
+  * Returns confirmation string
+
+## Design
+
+Here is a basic design overview diagram:
+
+![design_image](assets/yeelight.png)
+
+## Next steps
+
 1. Install the `yeelight` library for Python:
    - ~~Task: Run `pip install yeelight` in the terminal to install the required library to control the Yeelight LED strip.~~
 
