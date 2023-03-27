@@ -67,16 +67,26 @@ def discover_bulb():
     raise Exception ("No bulb found")
 
 def _int_to_colour(colour: int) -> Tuple[int, int, int]:
-    colour = int(colour)
     return (
         (colour >> 16) & 0xFF,
         (colour >> 8) & 0xFF,
         colour & 0xFF,
     )
 
+@app.post("/api/v1/set_brightness/")
+def set_brightness(brightness: int):
+    print(f"Received brightness: {brightness}%")
+    # convert brightness to integer if it's a string
+    if isinstance(brightness, str):
+        brightness = (brightness)
+    print(f"Converted brightness: {brightness}%")
+    # set the brightness of the bulb
+    bulb.set_brightness(brightness)
+    # return confirmation string
+    return f"Brightness set to {brightness}%"
+
 bulb = None
 bulb = discover_bulb()
-# todo other things like turn_off, set_colour, etc.
 
 if __name__ == '__main__':
     import uvicorn
