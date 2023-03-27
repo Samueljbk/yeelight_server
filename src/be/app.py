@@ -2,7 +2,7 @@ from pathlib import Path
 import fastapi as fa
 from pydantic import BaseModel
 from yeelight import Bulb, discover_bulbs
-from typing import Tuple
+from typing import Tuple, List
 
 
 app = fa.FastAPI()
@@ -82,6 +82,11 @@ def set_brightness(brightness: int):
     bulb.set_brightness(brightness)
     # return confirmation string
     return f"Brightness set to {brightness}%"
+
+@app.post("/api/v1/set_colour/")
+def set_colour(red: int, green: int, blue: int):
+    bulb.set_rgb(red, green, blue)
+    return f"Colour set to R: {red}, G: {green}, B: {blue}"
 
 bulb = None
 bulb = discover_bulb()
