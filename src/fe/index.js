@@ -28,8 +28,8 @@ function getStatus() {
     );
     // set the response span text to the response text content
     // don't forget to get the result of the promise
-    response.text().then(function(obj) {
-      responseSpan.textContent = obj;
+    response.text().then(function(text) {
+      responseSpan.textContent = text;
     })
   })
 }
@@ -84,9 +84,8 @@ function setBrightness() {
   var brightness = document.getElementById('brightness').value;
 
   // post the /api/vi/set_brightness endpoint
-  fetch('/api/v1/set_brightness', {
+  fetch(`/api/v1/set_brightness?brightness=${brightness}`, {
     method: 'POST',
-    body: JSON.stringify(brightness)
   }).then(function(response) {
     // get the response span
     var responseSpan = document.getElementById(
