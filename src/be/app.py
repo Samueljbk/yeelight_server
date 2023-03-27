@@ -2,7 +2,7 @@ from pathlib import Path
 import fastapi as fa
 from pydantic import BaseModel
 from yeelight import Bulb, discover_bulbs
-from typing import Tuple, List
+from typing import Tuple
 
 
 app = fa.FastAPI()
