@@ -35,7 +35,7 @@ The backend should implement API endpoints to accomodate the above buttons with 
   * Returns confirmation string    
 * POST `/api/v1/set_brightness`
   * warning: scope creep - this was not in the original spec/discussions
-  * Body of the request is an integer (0-100) representing brightness levels
+  * `brightness` query parameter of the request is an integer (0-100) representing brightness levels
   * Sets the brightness of the bulb
   * Returns confirmation string
 
