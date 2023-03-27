@@ -75,11 +75,9 @@ def _int_to_colour(colour: int) -> Tuple[int, int, int]:
 
 @app.post("/api/v1/set_brightness/")
 def set_brightness(brightness: int):
-    print(f"Received brightness: {brightness}%")
     # convert brightness to integer if it's a string
     if isinstance(brightness, str):
         brightness = (brightness)
-    print(f"Converted brightness: {brightness}%")
     # set the brightness of the bulb
     bulb.set_brightness(brightness)
     # return confirmation string
