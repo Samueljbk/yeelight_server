@@ -29,7 +29,7 @@ The backend should implement API endpoints to accomodate the above buttons with 
   * Turn the bulb off
   * Returns confirmation string
 * POST `/api/v1/set_colour`
-  * Body is a list of rgb values (ints, 0-255)
+  * Query parameters for `red` `green` and `blue` values is a list of rgb values (ints, 0-255)
     * like `[255, 0, 0]`
   * Sets the colour of the bulb to the colour described in the body
   * Returns confirmation string    
