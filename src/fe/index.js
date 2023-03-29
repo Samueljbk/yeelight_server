@@ -59,12 +59,9 @@ function setColour() {
   var green = document.getElementById('green').value;
   var blue = document.getElementById('blue').value;
 
-  var colour = [red, green, blue];
-
   // post the /api/vi/set_colour endpoint
-  fetch('/api/v1/set_colour', {
+  fetch(`/api/v1/set_colour?red=${red}&green=${green}&blue=${blue}`, {
     method: 'POST',
-    body: JSON.stringify(colour)
   }).then(function(response) {
     // get the response span
     var responseSpan = document.getElementById(

@@ -83,6 +83,11 @@ def set_brightness(brightness: int):
     # return confirmation string
     return f"Brightness set to {brightness}%"
 
+@app.post("/api/v1/set_colour/")
+def set_colour(red: int, green: int, blue: int):
+    bulb.set_rgb(red, green, blue)
+    return f"Colour set to R: {red}, G: {green}, B: {blue}"
+
 bulb = None
 bulb = discover_bulb()
 
