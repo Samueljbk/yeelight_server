@@ -79,7 +79,7 @@ def _int_to_colour(colour: int) -> Tuple[int, int, int]:
     return (
         (colour >> 16) & 0xFF,
         (colour >> 8) & 0xFF,
-        colour & 0xFF,
+        colour & 0xFF                      ,
     )
 
 
@@ -87,7 +87,7 @@ def _int_to_colour(colour: int) -> Tuple[int, int, int]:
 def set_brightness(brightness: int):
     # convert brightness to integer if it's a string
     if isinstance(brightness, str):
-        brightness = brightness
+        brightness = brightness       
     # set the brightness of the bulb
     bulb.set_brightness(brightness)
     # return confirmation string
