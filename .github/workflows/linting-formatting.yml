@@ -7,8 +7,14 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-      - name: Run black
+      - name: Install Dependencies
         run: |
-          pip install black
+          pip install black ruff
+      - name: Run Black
+        run: |
           black src --check
+      - name: Run Ruff
+        run: |
+          ruff src
+
       - run: echo "🍏 This job's status is ${{ job.status }}."
