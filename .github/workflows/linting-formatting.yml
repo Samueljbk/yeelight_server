@@ -1,0 +1,20 @@
+name: Linting and Formatting
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements-dev.txt
+      - name: Run Black
+        run: |
+          black src --check
+      - name: Run Ruff
+        run: |
+          ruff src
+
+      - run: echo "🍏 This job's status is ${{ job.status }}."
