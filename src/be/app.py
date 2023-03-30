@@ -85,6 +85,8 @@ def set_brightness(brightness: int):
 
 @app.post("/api/v1/set_colour/")
 def set_colour(red: int, green: int, blue: int):
+    if red == 0 and green == 0 and blue == 0:
+        raise fa.HTTPException(status_code=400, detail="Invalid RGB values: (0, 0, 0) not allowed. Use the turn off method instead.")
     bulb.set_rgb(red, green, blue)
     return f"Colour set to R: {red}, G: {green}, B: {blue}"
 

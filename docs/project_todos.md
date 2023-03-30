@@ -2,24 +2,25 @@
 
 * Git basics
   * ~~Solo dev workflows (add, commit, push)~~
-  * Team workflows (branch, add, commit, push, merge request, review)
+  * ~~Team workflows (branch, add, commit, push, merge request, review)~~
 * Python basics
-  * Syntax
+  * ~~Syntax~~
   * Best practices
     * Project structure
     * Linting, formatting, testing (maybe CI)
   * Environment setup (venv, pip, poetry)
 * General Learning
+  * SSH Tutorials
+  * Tmux Tutorials
+  * Ubuntu Command line Tutorials
   * HTTP APIs
     * General learning of the networking (OSI model)
     * [FastAPI](https://fastapi.tiangolo.com/#example)
     * Try make a few silly APIs
-* Basic tooling for controlling yeelight led strip
-  * python package with nice functions
+        * ~~Runescape skill picker~~
 * Start leveraging those tools
-  * HTTP API for controlling lights
-  * Simple web frontend
-  * Implement apps
+  * ~~HTTP API for controlling lights~~
+  * ~~Simple web frontend~~
 * Yeelight App Ideas
   * GitHub activity indicator
   * Change colour of other users lights
