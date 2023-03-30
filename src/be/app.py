@@ -38,15 +38,14 @@ def static(path: str):
 
 @app.get("/api/v1/status")
 def status():
-    # Use the `bulb` variable to get the properties of the LED strip, such as its name, power status, brightness, and color. Return these properties as an instance of the `Status` class.
+    # Use the `bulb` variable to get the properties of the LED strip
+    # Such as its name, power status, brightness, and color.
+    # Return these properties as an instance of the `Status` class.
     properties = bulb.get_properties()
     bulb_name = properties["name"] or "Unknown"
     power_status = properties["power"]
     brightness = int(properties["bright"])
     colour = _int_to_colour(int(properties["rgb"]))
-    print(
-        f"Bulb name: {bulb_name}, Power status: {power_status}, Brightness: {brightness}, Colour: {colour}"
-    )
     return Status(
         bulb_name=bulb_name,
         power_status=power_status,
@@ -79,7 +78,7 @@ def _int_to_colour(colour: int) -> Tuple[int, int, int]:
     return (
         (colour >> 16) & 0xFF,
         (colour >> 8) & 0xFF,
-        colour & 0xFF                      ,
+        colour & 0xFF,
     )
 
 
@@ -87,7 +86,7 @@ def _int_to_colour(colour: int) -> Tuple[int, int, int]:
 def set_brightness(brightness: int):
     # convert brightness to integer if it's a string
     if isinstance(brightness, str):
-        brightness = brightness       
+        brightness = brightness
     # set the brightness of the bulb
     bulb.set_brightness(brightness)
     # return confirmation string
