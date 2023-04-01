@@ -10,7 +10,7 @@
     * Linting, formatting, testing (maybe CI)
   * Environment setup (venv, pip, poetry)
 * General Learning
-  * SSH Tutorials
+  * ~~SSH Tutorials~~
   * Tmux Tutorials
   * Ubuntu Command line Tutorials
   * HTTP APIs
