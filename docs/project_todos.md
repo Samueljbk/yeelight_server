@@ -5,14 +5,16 @@
   * ~~Team workflows (branch, add, commit, push, merge request, review)~~
 * Python basics
   * ~~Syntax~~
-  * Best practices
-    * Project structure
-    * Linting, formatting, testing (maybe CI)
+  * ~~Best practices~~
+    * ~~Basic Project structure~~
+    * ~~Linting, formatting, CI~~ 
+    * Testing
   * Environment setup (venv, pip, poetry)
+  * ~~venv -> pip~~
 * General Learning
   * ~~SSH Tutorials~~
   * ~~SFTP Tutorials~~
-  * Tmux Tutorials
+  * ~~Tmux Tutorials~~
   * Ubuntu Command line Tutorials
   * HTTP APIs
     * General learning of the networking (OSI model)
