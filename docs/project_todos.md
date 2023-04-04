@@ -11,6 +11,7 @@
   * Environment setup (venv, pip, poetry)
 * General Learning
   * ~~SSH Tutorials~~
+  * ~~SFTP Tutorials~~
   * Tmux Tutorials
   * Ubuntu Command line Tutorials
   * HTTP APIs
