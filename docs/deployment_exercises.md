@@ -21,6 +21,13 @@
         * `ps aux | grep yeelight_server`
         * `kill {process id}`
 * SSH, sftp, nohup (1 programs)
+    * Moving file between computers using sftp:
+        * Moving file to:
+            * `sftp rpi`
+            * `put {filename}`
+        * Getting file from:
+            * `sftp rpi`
+            * `get {filename}`
 * SSH, git, tmux (1 programs)
 * SSH, docker (1 programs)
 * SSH, docker-compose (1-4 programs)
