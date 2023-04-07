@@ -3,9 +3,7 @@ import discord
 from discord.ext import commands
 from yeelight import Bulb
 
-TOKEN = os.environ.get(
-    "MTA5MzQyNjQ4MDYxMDAyMTQ0OA.GFw3nd.-xk8ZQY92mhyaPOWu2tFl9yocPUlaaygBCgVgE"
-)
+TOKEN = os.environ.get("DISCORD_TOKEN")
 bulb_ip = os.environ.get("BULB_IP")
 
 # "192.168.86.81"
