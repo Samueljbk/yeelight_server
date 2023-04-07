@@ -1,11 +1,15 @@
+import os
 import discord
 from discord.ext import commands
 from yeelight import Bulb
 
-TOKEN = "MTA5MzQyNjQ4MDYxMDAyMTQ0OA.G1JUcC.Gbz2s1AuNll4Qj4PDFCJVcUh1u33iEzDRhPKow"
-bulb_ip = "192.168.86.81"
+TOKEN = os.environ.get(
+    "MTA5MzQyNjQ4MDYxMDAyMTQ0OA.GFw3nd.-xk8ZQY92mhyaPOWu2tFl9yocPUlaaygBCgVgE"
+)
+bulb_ip = os.environ.get("BULB_IP")
 
-intents = discord.Intents.default()
+# "192.168.86.81"
+
 intents = discord.Intents.default()
 intents.messages = True
 intents.message_content = True
