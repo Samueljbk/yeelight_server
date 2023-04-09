@@ -4,8 +4,9 @@ from discord.ext import commands
 from yeelight import Bulb
 
 TOKEN = os.environ.get("DISCORD_TOKEN")
-bulb_ip = os.environ.get("BULB_IP")
-
+print(TOKEN)
+BULB_IP = os.environ.get("BULB_IP")
+print(BULB_IP)
 # "192.168.86.81"
 
 intents = discord.Intents.default()
@@ -13,7 +14,7 @@ intents.messages = True
 intents.message_content = True
 bot = commands.Bot(command_prefix="$", intents=intents)
 
-bulb = Bulb(bulb_ip)
+bulb = Bulb(BULB_IP)
 
 
 @bot.event
