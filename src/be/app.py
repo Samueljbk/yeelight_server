@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 import fastapi as fa
 from pydantic import BaseModel
@@ -8,6 +9,8 @@ from typing import Tuple
 app = fa.FastAPI()
 
 _fe_dir = Path(__file__).parent.parent / "fe"
+
+BULB_IP = os.environ.get("BULB_IP")
 
 
 class Status(BaseModel):
