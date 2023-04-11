@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 import fastapi as fa
 from pydantic import BaseModel
-from yeelight import Bulb, discover_bulbs
+from yeelight import Bulb
 from typing import Tuple
 
 
@@ -97,7 +97,6 @@ def set_colour(red: int, green: int, blue: int):
     return f"Colour set to R: {red}, G: {green}, B: {blue}"
 
 
-bulb = None
 bulb = Bulb(BULB_IP)
 
 if __name__ == "__main__":
