@@ -31,23 +31,6 @@
   * WiFi scan arriving home detection
   * Runelite idle notification
   * Phone notification (or other pc stuff)
-* Plan out the app
-  * What sort of server/client structure should it have?
-    * Happy to donate my RPi's to the cause (Jerome)
-  * What tech stack?
-    * Assume python for the language
-    * HTTP api server if needed (FastAPI, flask)
-    * Client side app?
-      * If yes, what GUI framework?
-    * Web frontend?
-      * If yes, what web FE GUI framework?
-    * Do we need a database?
-      * Probably not, but if we wanted some extra complexity we could.
-  * Thinking about things like:
-    * Deployment/Installation
-      * Windows vs Linux versions
-    * Updates
-    * Monitoring
 * Deployment
   * Rasperry Pi via ssh+tmux
   * Docker (this is a bit advanced)
