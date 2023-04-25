@@ -63,9 +63,15 @@ mkdir = make folder / directory
             * e.g. `docker kill confident_solomon`
     * Stop and remove a docker container:
         * `docker rm -f {CONTAINER}`
+
+* pip freeze
+    * Show all currently installed dependencies
+* pip freeze > requirements.txt
+    * Pipes all currently installed depencies into a file named requirements.txt
     
-    
-    
+sudo docker run -d --restart=always --name mycontainer2 -p 8000:8000 -e BULB_IP=192.168.86.81 myimage
+
+
 
 
 
