@@ -3,11 +3,11 @@ import discord
 from discord.ext import commands
 from yeelight import Bulb
 
+
 TOKEN = os.environ.get("DISCORD_TOKEN")
 print(TOKEN)
 BULB_IP = os.environ.get("BULB_IP")
 print(BULB_IP)
-# "192.168.86.81"
 
 intents = discord.Intents.default()
 intents.messages = True
