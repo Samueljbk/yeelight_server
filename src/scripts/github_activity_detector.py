@@ -3,9 +3,11 @@ import datetime
 import time
 from yeelight import Bulb
 from github import Github
+from dotenv import load_dotenv
 
+load_dotenv()
 
-yeelight_ip = os.environ["BULB_IP"]
+yeelight_ip = "192.168.86.122"
 bulb = Bulb(yeelight_ip)
 token = os.environ["PERSONAL_ACCESS_TOKEN"]
 
