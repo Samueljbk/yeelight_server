@@ -1,13 +1,16 @@
+import os
 from pathlib import Path
 import fastapi as fa
 from pydantic import BaseModel
-from yeelight import Bulb, discover_bulbs
+from yeelight import Bulb
 from typing import Tuple
 
 
 app = fa.FastAPI()
 
 _fe_dir = Path(__file__).parent.parent / "fe"
+
+BULB_IP = os.environ.get("BULB_IP")
 
 
 class Status(BaseModel):
@@ -64,16 +67,6 @@ def turn_off():
     return bulb.turn_off()
 
 
-def discover_bulb():
-    bulbs = discover_bulbs()
-    for bulb in bulbs:
-        if bulb["capabilities"]["name"] == "Sam":
-            bulb_ip = bulb["ip"]
-            bulb = Bulb(bulb_ip)
-            return bulb
-    raise Exception("No bulb found")
-
-
 def _int_to_colour(colour: int) -> Tuple[int, int, int]:
     return (
         (colour >> 16) & 0xFF,
@@ -104,8 +97,7 @@ def set_colour(red: int, green: int, blue: int):
     return f"Colour set to R: {red}, G: {green}, B: {blue}"
 
 
-bulb = None
-bulb = discover_bulb()
+bulb = Bulb(BULB_IP)
 
 if __name__ == "__main__":
     import uvicorn
