@@ -1,9 +1,11 @@
 import os
 import datetime
 import time
+import pytz
 from yeelight import Bulb
 from github import Github
 from dotenv import load_dotenv
+
 
 load_dotenv()
 
@@ -29,7 +31,11 @@ def check_commit_status():
     latest_event = max(push_events, key=lambda e: e.created_at)
     latest_event_time = latest_event.created_at
 
-    if latest_event_time.date() == datetime.date.today():
+    # Convert the latest_event_time to your local timezone
+    local_timezone = pytz.timezone("Pacific/Auckland")
+    local_latest_event_time = latest_event_time.astimezone(local_timezone)
+
+    if local_latest_event_time.date() == datetime.date.today():
         print("Pushed Today")
         set_light_colour("green")
     else:
@@ -46,7 +52,7 @@ while True:
         time.sleep(60)
     else:
         check_commit_status()
-        time.sleep(10)
+        time.sleep(30)
 
 # TODO GOAL: Set light colour to be one colour before commiting and one colour after
 
