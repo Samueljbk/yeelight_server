@@ -12,10 +12,11 @@ load_dotenv()
 yeelight_ip = os.environ["BULB_IP"]
 bulb = Bulb(yeelight_ip)
 token = os.environ["PERSONAL_ACCESS_TOKEN"]
+username = os.environ["GITHUB_USERNAME"]
 
 g = Github(token)
 
-user = g.get_user("Samueljbk")
+user = g.get_user(username)
 
 
 def set_light_colour(colour):
@@ -25,17 +26,29 @@ def set_light_colour(colour):
         bulb.set_rgb(0, 255, 0)
 
 
-def check_commit_status():
+def get_last_commit_time() -> datetime.datetime:
     all_events = list(user.get_events())
     push_events = [e for e in all_events if e.type == "PushEvent"]
     latest_event = max(push_events, key=lambda e: e.created_at)
     latest_event_time = latest_event.created_at
+    utc_dt = pytz.utc.localize(latest_event_time)
 
-    # Convert the latest_event_time to your local timezone
-    local_timezone = pytz.timezone("Pacific/Auckland")
-    local_latest_event_time = latest_event_time.astimezone(local_timezone)
+    # Step 3: Convert the localized UTC datetime to the desired local timezone
+    local_tz = pytz.timezone("Pacific/Auckland")  # Replace with your desired timezone
+    local_dt = utc_dt.astimezone(local_tz)
 
-    if local_latest_event_time.date() == datetime.date.today():
+    return local_dt
+
+
+def has_committed_today():
+    last_commit_time = get_last_commit_time()
+    current_time = datetime.datetime.now(pytz.timezone("Pacific/Auckland"))
+
+    return last_commit_time.date() == current_time.date()
+
+
+def update_light_colour():
+    if has_committed_today():
         print("Pushed Today")
         set_light_colour("green")
     else:
@@ -43,16 +56,9 @@ def check_commit_status():
         set_light_colour("red")
 
 
-check_commit_status()
-
 while True:
-    current_time = datetime.datetime.now()
-    if current_time.hour == 0 and current_time.minute == 0:
-        set_light_colour("red")
-        time.sleep(60)
-    else:
-        check_commit_status()
-        time.sleep(30)
+    update_light_colour()
+    time.sleep(30)
 
 # TODO GOAL: Set light colour to be one colour before commiting and one colour after
 
