@@ -59,10 +59,3 @@ def update_light_colour():
 while True:
     update_light_colour()
     time.sleep(30)
-
-# TODO GOAL: Set light colour to be one colour before commiting and one colour after
-
-# TODO: Write has_commited function, colour functions for before and after, time of day function
-# (is_past_seven or is_past_due_date etc)
-# Make a while True loop with a sleep that calls the correct colour function
-# Look at discord controller for inso on how to do bulb functions
