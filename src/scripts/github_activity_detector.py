@@ -57,5 +57,8 @@ def update_light_colour():
 
 
 while True:
-    update_light_colour()
+    try:
+        update_light_colour()
+    except Exception as e:
+        print(e)
     time.sleep(30)
