@@ -22,7 +22,7 @@ user = g.get_user(username)
 
 def set_light_colour(colour):
     if colour == "red":
-        bulb.set_rgb(255, 0, 0)
+        bulb.set_rgb(255, 154, 138)
     elif colour == "green":
         bulb.set_rgb(0, 255, 0)
 
