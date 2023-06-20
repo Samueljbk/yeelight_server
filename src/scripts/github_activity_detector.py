@@ -24,7 +24,7 @@ def set_light_colour(colour):
     if colour == "red":
         bulb.set_rgb(255, 154, 138)
     elif colour == "green":
-        bulb.set_rgb(0, 255, 0)
+        bulb.set_rgb(119, 221, 119)
 
 
 def get_last_commit_time() -> datetime.datetime:
