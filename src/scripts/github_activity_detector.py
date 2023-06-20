@@ -30,6 +30,7 @@ def get_last_commit_time() -> datetime.datetime:
     all_events = list(user.get_events())
     push_events = [e for e in all_events if e.type == "PushEvent"]
     latest_event = max(push_events, key=lambda e: e.created_at)
+    print(latest_event)
     latest_event_time = latest_event.created_at
     utc_dt = pytz.utc.localize(latest_event_time)
 
