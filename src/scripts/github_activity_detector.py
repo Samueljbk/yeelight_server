@@ -2,6 +2,7 @@ import os
 import datetime
 import time
 import pytz
+import requests
 from yeelight import Bulb
 from github import Github
 from dotenv import load_dotenv
